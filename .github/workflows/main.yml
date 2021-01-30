@@ -34,7 +34,22 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      #- name: install latex
-      #  run: sudo apt-get install latex2html
+      - name: install latex
+        run: sudo apt-get install latex2html
+      - name: clear tex html directory
+        run: rm -rf texHtml/*
+      - name: run latex2html on tex file
+        run: latex2html tex/* texHtml/
       - name: display current directory
         run: echo "`pwd`"
+      - name: push
+        uses: dciborow/commit@0.0.2
+        with:
+          github-token: ${{ secrets.PUSH_TOKEN }}
+          push-branch: 'main'
+          commit-message: 'pushing latex files'
+          force-add: 'true'
+          force-push: 'true'
+          files: texHtml/
+          name: texToHtml
+          email: texToHtml@naren.com 
