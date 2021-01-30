@@ -34,5 +34,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-      - name: install latex
-        run: sudo apt-get install latex2html
+      #- name: install latex
+      #  run: sudo apt-get install latex2html
+      - name: display current directory
+        run: echo "`pwd`"
