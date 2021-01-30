@@ -37,9 +37,9 @@ jobs:
       - name: install latex
         run: sudo apt-get install latex2html
       - name: clear tex html directory
-        run: rm -rf texHtml/*
+        run: rm -rf docs/texHtml/*
       - name: run latex2html on tex file
-        run: latex2html tex/*  -dir texHtml
+        run: latex2html tex/*  -dir docs/texHtml
       - name: display current directory
         run: echo "`pwd`"
       - name: push
