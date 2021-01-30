@@ -43,7 +43,7 @@ jobs:
       - name: display current directory
         run: echo "`pwd`"
       - name: push
-        uses: dciborow/commit@0.0.2
+        uses: dciborow/commit
         with:
           github-token: ${{ secrets.PUSH_TOKEN }}
           push-branch: 'main'
