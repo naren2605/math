@@ -43,13 +43,9 @@ jobs:
       - name: display current directory
         run: echo "`pwd`"
       - name: push
-        uses: dciborow/commit
-        with:
-          github-token: ${{ secrets.PUSH_TOKEN }}
-          push-branch: 'main'
-          commit-message: 'pushing latex files'
-          force-add: 'true'
-          force-push: 'true'
-          files: texHtml/
-          name: texToHtml
-          email: texToHtml@naren.com 
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "updating latex files"
+          git push main
