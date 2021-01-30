@@ -39,7 +39,7 @@ jobs:
       - name: clear tex html directory
         run: rm -rf texHtml/*
       - name: run latex2html on tex file
-        run: latex2html tex/* texHtml/
+        run: latex2html tex/*  -dir texHtml
       - name: display current directory
         run: echo "`pwd`"
       - name: push
